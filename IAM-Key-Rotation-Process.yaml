@@ -3,7 +3,7 @@ Parameters:
   codeRepositoryBucket:
     Type: String
     Description: Code repository bucket name
-    Default: code-stash
+    Default: iam-apikeys-autorotation-lambda-project
   iamPolicyName:
     Description: IAM Policy Name
     Type: String
@@ -161,7 +161,7 @@ Resources:
       Timeout: 60
       Code:
         S3Bucket: !Ref 'codeRepositoryBucket'
-        S3Key: 'IAM-Key-Rotation-Automation/Lambda-Code/f-iam-key-manage.zip'
+        S3Key: 'IAMKeyRotation-main/f-iam-key-manage.zip'
       Tags:
         - Key: 'Environment'
           Value: 'Development'
@@ -218,7 +218,7 @@ Resources:
       Timeout: 60
       Code:
         S3Bucket: !Ref 'codeRepositoryBucket'
-        S3Key: 'IAM-Key-Rotation-Automation/Lambda-Code/f-iam-key-delete.zip'
+        S3Key: 'IAMKeyRotation-main/f-iam-key-delete.zip'
       Tags:
         - Key: 'Environment'
           Value: 'Development'
